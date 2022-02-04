@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.x
-    - name: fetch
+    - name: Fetch
       run: git fetch
     - name: checkout to param branch
       run: git checkout -b param
@@ -29,5 +29,5 @@ jobs:
       run: dotnet test ./RestaurantTP --no-build --verbosity normal    
     - name: Deploy
       run: dotnet publish ./RestaurantTP 
-    - name: Delete param branch
-      run: git branch -D param
+    # - name: Delete param branch
+    #   run: git branch -D param
