@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  script:
 
     runs-on: ubuntu-latest
 
@@ -17,6 +17,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.x
+    - name: fetch
+      run: git fetch
+    - name: checkout to param branch
+      run: git checkout -b param
     - name: Restore dependencies
       run: dotnet restore ./RestaurantTP
     - name: Build
@@ -25,3 +29,5 @@ jobs:
       run: dotnet test ./RestaurantTP --no-build --verbosity normal    
     - name: Deploy
       run: dotnet publish ./RestaurantTP 
+    - name: Delete param branch
+      run: git branch -D param
