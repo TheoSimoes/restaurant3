@@ -28,6 +28,4 @@ jobs:
     - name: Test
       run: dotnet test ./RestaurantTP --no-build --verbosity normal    
     - name: Deploy
-      run: dotnet publish ./RestaurantTP 
-    # - name: Delete param branch
-    #   run: git branch -D param
+      run: dotnet publish ./RestaurantTP
