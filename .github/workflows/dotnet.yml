@@ -19,8 +19,8 @@ jobs:
         dotnet-version: 3.1.x
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore .\RestaurantTP\
+      run: dotnet restore ./RestaurantTP
     - name: Build
-      run: dotnet build .\RestaurantTP\ --no-restore
+      run: dotnet build ./RestaurantTP --no-restore
     - name: Test
-      run: dotnet test .\RestaurantTP\ --no-build --verbosity normal
+      run: dotnet test ./RestaurantTP --no-build --verbosity normal
